@@ -9,7 +9,6 @@ import { Link } from "@tanstack/react-router";
 function Nav() {
     return (
     <>
-        <div className="h-72 text-center pt-20">image placeholder</div>
         <NavigationMenu>
             <NavigationMenuList className="max-w-full">
                 <NavigationMenuItem>

@@ -1,6 +1,7 @@
 import { createRootRoute, createRoute, createRouter, Outlet } from "@tanstack/react-router"
 import { PageContainer } from "./components/custom/PageContainer"
 import HomePage from "./views/HomePage"
+import Nav from "./components/custom/Nav"
 
 declare module "@tanstack/react-router" {
     interface Register {
@@ -12,7 +13,7 @@ const rootRoute = createRootRoute({
     component: () => (
         <>
             <PageContainer>
-            <HomePage />
+                <Nav />
                 <Outlet />
             </PageContainer>
         </>
@@ -24,7 +25,7 @@ const homeRoute = createRoute({
     path: "/",
     component: () => (
         <>
-            <h1>HOME</h1>
+            <HomePage />
         </>
     )
 })

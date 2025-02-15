@@ -1,7 +1,11 @@
-import Nav from "@/components/custom/Nav";
+import ScrollingImage from "@/components/custom/ScrollingImage";
 
 function HomePage() {
-    return <Nav />
+    return (
+        <>
+            <ScrollingImage />
+        </>
+    )
 }
 
 export default HomePage
