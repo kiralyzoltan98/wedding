@@ -1,8 +1,8 @@
 import in_love from "../../assets/in_love.jpg"
 
-document.addEventListener("scroll", (event) => {
+/*document.addEventListener("scroll", (event) => {
   console.log("scrolling")
-})
+})*/
 
 export default function ScrollingImage() {
 
