@@ -1,18 +1,54 @@
-import in_love from "../../assets/in_love.jpg"
+import in_love_img from "../../assets/in_love.jpg"
+import yes_img from "../../assets/yes.jpg"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { Card, CardContent } from "../ui/card";
 
-/*document.addEventListener("scroll", (event) => {
-  console.log("scrolling")
-})*/
+const carouselImages = [
+  {
+    src: in_love_img,
+    style: "object-[42%_58%]"
+  },
+  {
+    src: yes_img,
+    style: "object-[42%_58%]"
+  },
+  {
+    src: in_love_img,
+    style: "object-[42%_58%]"
+  },
+  {
+    src: yes_img,
+    style: "object-[42%_58%]"
+  },
+  {
+    src: in_love_img,
+    style: "object-[42%_58%]"
+  },
+]
 
-export default function ScrollingImage() {
-
+export default function ScrollingImage() {  
   return (
-      <div className="relative w-full h-screen overflow-hidden">
-          <img 
-              src={in_love} 
-              alt="A picture of the couple" 
-              className="ml-[5%] mt-[15%] w-[90%] h-3/5 object-cover absolute object-[23%77%]"
-          />
-      </div>
+    <>
+      <Carousel className="w-[90%] ml-[5%] mt-[10%]">
+        <CarouselContent>
+          {carouselImages.map((element, index) => (
+            <CarouselItem key={index}>
+                <Card>
+                  <CardContent className="h-150"> {/* TODO: Figure out height issues! */}
+                    <img
+                      src={element.src}
+                      alt="A picture of the couple"
+                      className="object-none object-[25%_115%] rounded-xl"
+                    />
+                  </CardContent>
+                </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </>
+      
   );
 }
