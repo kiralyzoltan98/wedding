@@ -1,6 +1,7 @@
 import { RouterProvider } from '@tanstack/react-router'
 import { Toaster } from './components/ui/sonner'
 import './index.css'
+import './css/embla.css'
 import { router } from './router'
 
 function App() {

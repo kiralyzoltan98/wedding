@@ -1,48 +1,19 @@
 import in_love_img from "../../assets/in_love.jpg"
 import yes_img from "../../assets/yes.jpg"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
-import { Card, CardContent } from "../ui/card";
+import toth_arpad_setany from "../../assets/toth_arpad_setany.jpg"
+import lepcso from "../../assets/lepcso.jpg"
+import kanape from "../../assets/kanape.jpg"
+import { EmblaOptionsType } from "embla-carousel";
+import EmblaCarousel from "./carousel/EmblaCarousel";
 
-const carouselImages = [
-  {
-    src: in_love_img,
-  },
-  {
-    src: yes_img,
-  },
-  {
-    src: in_love_img,
-  },
-  {
-    src: yes_img,
-  },
-  {
-    src: in_love_img,
-  },
-]
+const carouselImages = [ in_love_img, toth_arpad_setany, lepcso, kanape, yes_img, ]
+
+const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true }
 
 export default function ScrollingImage() {  
   return (
-    <div className="h-screen w-screen">
-      <Carousel className="max-w-[50%] ml-[25%] mt-[13%]" opts={{ dragFree: true, loop: true}} >
-        <CarouselContent>
-          {carouselImages.map((element, index) => (
-            <CarouselItem key={index}>
-                <Card>
-                  <CardContent>
-                    <img
-                      src={element.src}
-                      alt="A picture of the couple"
-                      className={`w-300 h-140 object-contain rounded-xl`}
-                    />
-                  </CardContent>
-                </Card>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+    <div className="mt-[3%]">
+      <EmblaCarousel slides={carouselImages} options={OPTIONS} />
     </div>
       
   );

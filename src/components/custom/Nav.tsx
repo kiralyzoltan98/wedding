@@ -5,40 +5,49 @@ import {
   } from "@/components/ui/navigation-menu"
 import { Button } from "../ui/button";
 import { Link } from "@tanstack/react-router";
+import floral from "../../assets/floral.jpg"
+import { Card, CardContent } from "../ui/card";
 
 function Nav() {
     return (
-    <>
+    <div>
+        <div>
+            <img src={floral} alt="floral"></img>
+        </div>
         <NavigationMenu>
-            <NavigationMenuList className="max-w-full">
-                <NavigationMenuItem>
-                    <Link to="/">
-                        <Button variant="ghost"> Home </Button>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link to="/agenda">
-                        <Button variant="ghost" className="ml-5"> Agenda </Button>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link to="/invitation">
-                        <Button variant="ghost" className="ml-5"> Invitation </Button>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link to="/upload">
-                        <Button variant="ghost" className="ml-5"> Upload </Button>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link to="/guestList">
-                        <Button variant="ghost" className="ml-5"> Guest List </Button>
-                    </Link>
-                </NavigationMenuItem>
-            </NavigationMenuList>
+            <Card className="absolute mb-[30%] transparent_glass">
+                <CardContent>
+                    <NavigationMenuList className="flex gap-5">
+                        <NavigationMenuItem>
+                            <Link to="/">
+                                <Button variant="outline" className="ml-5"> Home </Button>
+                            </Link>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <Link to="/agenda">
+                                <Button variant="outline"> Agenda </Button>
+                            </Link>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <Link to="/invitation">
+                                <Button variant="outline"> Invitation </Button>
+                            </Link>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <Link to="/upload">
+                                <Button variant="outline"> Upload </Button>
+                            </Link>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <Link to="/guestList">
+                                <Button variant="outline" className="mr-5"> Guest List </Button>
+                            </Link>
+                        </NavigationMenuItem>
+                    </NavigationMenuList>
+                </CardContent>
+            </Card>
         </NavigationMenu>
-    </>
+    </div>
     )
 }
 
