@@ -6,39 +6,34 @@ import { Card, CardContent } from "../ui/card";
 const carouselImages = [
   {
     src: in_love_img,
-    style: "object-[42%_58%]"
   },
   {
     src: yes_img,
-    style: "object-[42%_58%]"
   },
   {
     src: in_love_img,
-    style: "object-[42%_58%]"
   },
   {
     src: yes_img,
-    style: "object-[42%_58%]"
   },
   {
     src: in_love_img,
-    style: "object-[42%_58%]"
   },
 ]
 
 export default function ScrollingImage() {  
   return (
-    <>
-      <Carousel className="w-[90%] ml-[5%] mt-[10%]">
+    <div className="h-screen w-screen">
+      <Carousel className="max-w-[50%] ml-[25%] mt-[13%]" opts={{ dragFree: true, loop: true}} >
         <CarouselContent>
           {carouselImages.map((element, index) => (
             <CarouselItem key={index}>
                 <Card>
-                  <CardContent className="h-150"> {/* TODO: Figure out height issues! */}
+                  <CardContent>
                     <img
                       src={element.src}
                       alt="A picture of the couple"
-                      className="object-none object-[25%_115%] rounded-xl"
+                      className={`w-300 h-140 object-contain rounded-xl`}
                     />
                   </CardContent>
                 </Card>
@@ -48,7 +43,7 @@ export default function ScrollingImage() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-    </>
+    </div>
       
   );
 }
