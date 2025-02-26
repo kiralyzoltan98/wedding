@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { RefObject, useCallback, useEffect, useRef } from 'react'
 import {
   EmblaCarouselType,
   EmblaEventType,
@@ -102,7 +102,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const progressNode = useRef<HTMLDivElement>(null)
   const { toggleAutoplay, autoplayIsPlaying } = useAutoplay(emblaApi)
 
-  const { showAutoplayProgress } = useAutoplayProgress(emblaApi, progressNode)
+  const { showAutoplayProgress } = useAutoplayProgress(emblaApi, progressNode as RefObject<HTMLElement>)
 
   return (
     <div className="embla">
