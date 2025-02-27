@@ -8,14 +8,14 @@ import { Link } from "@tanstack/react-router";
 import floral from "../../assets/floral.jpg"
 import { Card, CardContent } from "../ui/card";
 
-function Nav() {
+export default function Nav() {
     return (
     <div>
         <div>
             <img src={floral} alt="floral"></img>
         </div>
         <NavigationMenu>
-            <Card className="absolute mb-[30%] transparent_glass">
+            <Card className="absolute mb-[30%] transparent_glass backdrop-blur-[6px]">
                 <CardContent>
                     <NavigationMenuList className="flex gap-5">
                         <NavigationMenuItem>
@@ -50,5 +50,3 @@ function Nav() {
     </div>
     )
 }
-
-export default Nav;

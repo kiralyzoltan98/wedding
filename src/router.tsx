@@ -2,6 +2,8 @@ import { createRootRoute, createRoute, createRouter, Outlet } from "@tanstack/re
 import { PageContainer } from "./components/custom/PageContainer"
 import HomePage from "./views/HomePage"
 import Nav from "./components/custom/Nav"
+import Footer from "./components/custom/Footer"
+import LoginPage from "./views/LoginPage"
 
 declare module "@tanstack/react-router" {
     interface Register {
@@ -12,8 +14,7 @@ declare module "@tanstack/react-router" {
 const rootRoute = createRootRoute({
     component: () => (
         <>
-            <PageContainer>
-                <Nav />
+            <PageContainer className="flex flex-col min-h-screen">
                 <Outlet />
             </PageContainer>
         </>
@@ -30,12 +31,24 @@ const homeRoute = createRoute({
     )
 })
 
+const homeRoute2 = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "wedding",
+    component: () => (
+        <>
+            <HomePage />
+        </>
+    )
+})
+
 const agendaRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "agenda",
     component: () => (
         <>
+            <Nav />
             <h1>agenda</h1>
+            <Footer />
         </>
     )
 })
@@ -45,7 +58,9 @@ const invitationRoute = createRoute({
     path: "invitation",
     component: () => (
         <>
+            <Nav />
             <h1>invitation</h1>
+            <Footer />
         </>
     )
 })
@@ -55,7 +70,9 @@ const uploadRoute = createRoute({
     path: "upload",
     component: () => (
         <>
+            <Nav />
             <h1>upload</h1>
+            <Footer />
         </>
     )
 })
@@ -65,17 +82,32 @@ const guestListRoute = createRoute({
     path: "guestList",
     component: () => (
         <>
+            <Nav />
             <h1>Guest list</h1>
+            <Footer />
+        </>
+    )
+})
+
+const loginRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "login",
+    component: () => (
+        <>
+            <LoginPage />
+            <Footer />
         </>
     )
 })
 
 const routeTree = rootRoute.addChildren([
     homeRoute,
+    homeRoute2,
     agendaRoute,
     invitationRoute,
     uploadRoute,
     guestListRoute,
+    loginRoute,
 ])
 
 export const router = createRouter({ routeTree })
