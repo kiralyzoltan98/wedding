@@ -4,7 +4,6 @@ import HomePage from "./views/HomePage"
 import Nav from "./components/custom/Nav"
 import Footer from "./components/custom/Footer"
 import LoginPage from "./views/LoginPage"
-import { AddToCalendarButton } from "add-to-calendar-button-react";
 import InvitationPage from "./views/InvitationPage"
 
 declare module "@tanstack/react-router" {
