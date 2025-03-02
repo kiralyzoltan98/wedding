@@ -5,6 +5,7 @@ import Nav from "./components/custom/Nav"
 import Footer from "./components/custom/Footer"
 import LoginPage from "./views/LoginPage"
 import { AddToCalendarButton } from "add-to-calendar-button-react";
+import InvitationPage from "./views/InvitationPage"
 
 declare module "@tanstack/react-router" {
     interface Register {
@@ -12,7 +13,7 @@ declare module "@tanstack/react-router" {
     }
 }
 
-const rootRoute = createRootRoute({
+export const rootRoute = createRootRoute({
     component: () => (
         <>
             <PageContainer className="flex flex-col min-h-screen">
@@ -60,17 +61,7 @@ const invitationRoute = createRoute({
     component: () => (
         <>
             <Nav />
-            <AddToCalendarButton
-                name="Daniella & Zoltán Polgári Esküvő"
-                description="Szeretettel várunk a polgári esküvőnkre, és az utánna lévő étkezésre!"
-                startDate="2025-07-05"
-                startTime="14:00"
-                endTime="18:00"
-                timeZone="Europe/Budapest"
-                location="Budapest, Jász u. 18, 1135"
-                options="'Apple','Google'"
-                hideBranding={true}
-            ></AddToCalendarButton>
+            <InvitationPage />
             <Footer />
         </>
     )

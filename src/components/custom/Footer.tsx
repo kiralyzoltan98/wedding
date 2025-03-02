@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="mt-auto bg-red-200 p-2">
       <div className="ml-6 mr-6 pl-6 pr-3 flex flex-col md:flex-row items-center justify-between transparent_glass rounded-t-lg">
         <p>Designed & Developed by{" "}
-          <a href="https://kiralyzoltan.com" className="cursor-pointer underline">Király Zoltán</a>
+          <a href="https://kiralyzoltan.com" className="cursor-pointer underline">Király&nbsp;Zoltán</a>
         </p>
         <p>❤️ All rights reserved ©</p>
         <Button variant='ghost' asChild>
