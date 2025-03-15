@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import "tailwindcss";
-
 @plugin "tailwindcss-animate";
+
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme {
+  --font-vibes: "Great Vibes", Great Vibes; 
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -58,12 +68,4 @@ html, body {
   background-size:
     calc(var(--radius) * 3) calc(var(--radius) * 3),
     calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);
-}
-
-.stamp-border {
-  width: min(50%, 600px);
-  height: 50%;
-  position: fixed;
-  inset: 0;
-  margin: auto;
 }

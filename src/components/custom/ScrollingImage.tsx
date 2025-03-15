@@ -12,7 +12,7 @@ const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true }
 
 export default function ScrollingImage() {  
   return (
-    <div className="mt-[3%]">
+    <div className="mt-[20%] sm:mt-[2%]">
       <EmblaCarousel slides={carouselImages} options={OPTIONS} />
     </div>
       

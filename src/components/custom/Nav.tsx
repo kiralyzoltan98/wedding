@@ -14,7 +14,7 @@ export default function Nav() {
         <div>
             <img src={floral} alt="floral"></img>
         </div>
-        <NavigationMenu>
+        <NavigationMenu className="hidden sm:flex">
             <Card className="absolute mb-[30%] transparent_glass backdrop-blur-[6px]">
                 <CardContent>
                     <NavigationMenuList className="flex gap-5">

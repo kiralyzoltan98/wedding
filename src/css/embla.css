@@ -1,7 +1,7 @@
 .embla {
-  max-width: 72rem;
+  max-width: 74rem;
   margin: auto;
-  --slide-height: 23rem;
+  --slide-height: 24rem;
   --slide-spacing: 1rem;
   --slide-size: 80%;
   --text-body: rgb(54, 49, 61);
@@ -110,7 +110,7 @@
   font-weight: 700;
   font-size: 1.4rem;
   padding: 0 2.4rem;
-  min-width: 8.4rem;
+  min-width: 6.4rem;
 }
 .embla__progress {
   border-radius: 1.8rem;
