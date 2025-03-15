@@ -16,8 +16,12 @@ export default function InvitationPage() {
   }
 
   return <div className="flex justify-center flex-col sm:flex-row items-center mt-[-10%] mb-4 h-full">
-    <AddToCalendarButton className="pb-[5%] sm:pb-0 sm:pr-[5%]" {...eventProps} />
+    <div className="pb-[5%] sm:pb-0 sm:pr-[5%]">
+      <AddToCalendarButton {...eventProps} />
+    </div>
     <img src={saveTheDate} className="stamp-border p-5 max-h-170 object-contain drop-shadow-[0_3px_3px_rgba(0,0,0,0.25)]"></img>
-    <AddToCalendarButton className="pt-[5%] sm:pt-0 sm:pl-[5%]" {...eventProps} />
+    <div className="pt-[5%] sm:pt-0 sm:pl-[5%]">
+      <AddToCalendarButton {...eventProps} />
+    </div>
   </div>
 }
