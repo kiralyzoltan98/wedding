@@ -7,10 +7,17 @@ import { Button } from "../ui/button";
 import { Link } from "@tanstack/react-router";
 import floral from "../../assets/floral.jpg"
 import { Card, CardContent } from "../ui/card";
+import HamburgerMenu from "./HamburgerMenu";
+import React from "react";
 
 export default function Nav() {
+    const [open, setOpen] = React.useState(false)
+
     return (
     <div>
+        <div className="md:hidden absolute top-0 right-0 content-center align-middle size-13 transparent_glass backdrop-blur-[6px]" onClick={() => setOpen(!open)}>
+            <HamburgerMenu open={open} />
+        </div>
         <div>
             <img src={floral} alt="floral"></img>
         </div>
